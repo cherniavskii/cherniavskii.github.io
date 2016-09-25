@@ -1,0 +1,341 @@
+[
+{
+	"id": "q1",
+	"title": "Will insulin make my patient gain weight?",
+	"authorId": "1",
+	"related": "1",
+	"peers": "6",
+	"conversations": "3",
+	"date": "16.01.2016",
+	"votes": "0",
+	"description": "All my patients with diabetes should see an ophtalmologist yearly for a dialated eye examination- beginning at diagnosis in people with type 2 diabetes, and after 5 years in people with type 1 diabetes after puberty. Patients with know eye disease, symptoms or blurred vision in one eye, or blind spots may need to see their ophtalmologist more frequently.",
+	"comments": [
+	{
+		"id": "c1",
+		"authorId": "2",
+		"when": "yesterday",
+		"commentText": "Numbers or tingling in your feet should be reported to your doctor at your regular visits. Numbers or tingling in your feet should be reported to your doctor at your regular visits. Numbers or tingling in your feet should be reported to your doctor at your regular visits.",
+		"votes": "8",
+		"answers": [
+		{
+			"id": "c2",
+			"authorId": "3",
+			"answerText": "You should check your feet daily for redness, caluses, cracks or skin breakdown.",
+			"when": "yesterday",
+			"votes": "1"
+		},
+		{
+			"id": "c3",
+			"authorId": "3",
+			"answerText": "Another answer for first comment",
+			"when": "now",
+			"votes": "165"
+		}
+
+		]
+	},
+	{
+		"id": "c4",
+		"authorId": "3",
+		"when": "two days",
+		"commentText": "When your blood sugar is low, your body gives out signs that you need food. Different people have different symptoms. You will learn to know that symptoms.",
+		"votes": "3"
+	},
+	{
+		"id": "c5",
+		"authorId": "3",
+		"when": "three days",
+		"commentText": "When your blood sugar is low, your body gives out signs that you need food. Different people have different symptoms. You will learn to know that symptoms.",
+		"votes": "-4"
+	}
+	]
+},
+{
+	"id": "q2",
+	"title": "Vegan diet in diabetes treatment?",
+	"authorId": "3",
+	"related": "2",
+	"peers": "9",
+	"conversations": "5",
+	"date": "15.01.2016",
+	"votes": "19",
+	"description": "All my patients with diabetes should see an ophtalmologist yearly for a dialated eye examination- beginning at diagnosis in people with type 2 diabetes, and after 5 years in people with type 1 diabetes after puberty. Patients with know eye disease, symptoms or blurred vision in one eye, or blind spots may need to see their ophtalmologist more frequently.",
+	"comments": [
+	{
+		"id": "c6",
+		"authorId": "2",
+		"when": "yesterday",
+		"commentText": "Numbers or tingling in your feet should be reported to your doctor at your regular visits. Numbers or tingling in your feet should be reported to your doctor at your regular visits. Numbers or tingling in your feet should be reported to your doctor at your regular visits.",
+		"votes": "8",
+		"answers": [
+		{
+			"id": "c7",
+			"authorId": "3",
+			"answerText": "You should check your feet daily for redness, caluses, cracks or skin breakdown.",
+			"when": "yesterday",
+			"votes": "2"
+		}
+
+		]
+	},
+	{
+		"id": "c8",
+		"authorId": "3",
+		"when": "two days",
+		"commentText": "When your blood sugar is low, your body gives out signs that you need food. Different people have different symptoms. You will learn to know that symptoms.",
+		"votes": "3",
+		"answers": [
+		{
+			"id": "c9",
+			"authorId": "3",
+			"answerText": "You should check your feet daily for redness, caluses, cracks or skin breakdown.",
+			"when": "yesterday",
+			"votes": "2"
+		}
+		]
+	},
+	{
+		"id": "c10",
+		"authorId": "3",
+		"when": "three days",
+		"commentText": "When your blood sugar is low, your body gives out signs that you need food. Different people have different symptoms. You will learn to know that symptoms.",
+		"votes": "5"
+	},
+	{
+		"id": "c11",
+		"authorId": "3",
+		"when": "four days",
+		"commentText": "You should check your feet daily for redness, caluses, cracks or skin breakdown.",
+		"votes": "5"
+	}
+	]
+},
+{
+	"id": "q3",
+	"title": "Vegan diet to stop diabetes progress?",
+	"authorId": "4",
+	"related": "5",
+	"peers": "4",
+	"conversations": "0",
+	"date": "14.01.2016",
+	"votes": "19",
+	"description": "All my patients with diabetes should see an ophtalmologist yearly for a dialated eye examination- beginning at diagnosis in people with type 2 diabetes, and after 5 years in people with type 1 diabetes after puberty. Patients with know eye disease, symptoms or blurred vision in one eye, or blind spots may need to see their ophtalmologist more frequently.",
+	"comments": [
+	{
+		"id": "c12",
+		"authorId": "2",
+		"when": "yesterday",
+		"commentText": "Numbers or tingling in your feet should be reported to your doctor at your regular visits. Numbers or tingling in your feet should be reported to your doctor at your regular visits. Numbers or tingling in your feet should be reported to your doctor at your regular visits.",
+		"votes": "8",
+		"answers": [
+		{
+			"id": "c13",
+			"authorId": "3",
+			"answerText": "You should check your feet daily for redness, caluses, cracks or skin breakdown.",
+			"when": "yesterday",
+			"votes": "2"
+		}
+
+		]
+	},
+	{
+		"id": "c14",
+		"authorId": "3",
+		"when": "two days",
+		"commentText": "When your blood sugar is low, your body gives out signs that you need food. Different people have different symptoms. You will learn to know that symptoms.",
+		"votes": "3",
+		"answers": [
+		{
+			"id": "c15",
+			"authorId": "3",
+			"answerText": "You should check your feet daily for redness, caluses, cracks or skin breakdown.",
+			"when": "yesterday",
+			"votes": "2"
+		},
+		{
+			"id": "c16",
+			"authorId": "3",
+			"answerText": "Another answer for first comment",
+			"when": "now",
+			"votes": "165"
+		},
+		{
+			"id": "c17",
+			"authorId": "3",
+			"answerText": "Another answer for first comment",
+			"when": "now",
+			"votes": "165"
+		},
+		{
+			"id": "c18",
+			"authorId": "3",
+			"answerText": "Another answer for first comment",
+			"when": "now",
+			"votes": "165"
+		},
+		{
+			"id": "c19",
+			"authorId": "3",
+			"answerText": "Another answer for first comment",
+			"when": "now",
+			"votes": "165"
+		}
+		]
+	}
+	]
+},
+{
+	"id": "q4",
+	"title": "Will insulin make my patient gain weight?",
+	"authorId": "2",
+	"related": "1",
+	"peers": "6",
+	"conversations": "3",
+	"date": "13.01.2016",
+	"votes": "19",
+	"description": "All my patients with diabetes should see an ophtalmologist yearly for a dialated eye examination- beginning at diagnosis in people with type 2 diabetes, and after 5 years in people with type 1 diabetes after puberty. Patients with know eye disease, symptoms or blurred vision in one eye, or blind spots may need to see their ophtalmologist more frequently.",
+	"comments": [
+	{
+		"id": "c20",
+		"authorId": "2",
+		"when": "yesterday",
+		"commentText": "Numbers or tingling in your feet should be reported to your doctor at your regular visits. Numbers or tingling in your feet should be reported to your doctor at your regular visits. Numbers or tingling in your feet should be reported to your doctor at your regular visits.",
+		"votes": "8",
+		"answers": [
+		{
+			"id": "c21",
+			"authorId": "3",
+			"answerText": "You should check your feet daily for redness, caluses, cracks or skin breakdown.",
+			"when": "yesterday",
+			"votes": "2"
+		},
+		{
+			"id": "c22",
+			"authorId": "3",
+			"answerText": "Another answer for first comment",
+			"when": "now",
+			"votes": "165"
+		}
+
+		]
+	},
+	{
+		"id": "c23",
+		"authorId": "3",
+		"when": "two days",
+		"commentText": "When your blood sugar is low, your body gives out signs that you need food. Different people have different symptoms. You will learn to know that symptoms.",
+		"votes": "3"
+	},
+	{
+		"id": "c24",
+		"authorId": "3",
+		"when": "three days",
+		"commentText": "When your blood sugar is low, your body gives out signs that you need food. Different people have different symptoms. You will learn to know that symptoms.",
+		"votes": "5"
+	}
+	]
+},
+{
+	"id": "q5",
+	"title": "Vegan diet in diabetes treatment?",
+	"authorId": "3",
+	"related": "2",
+	"peers": "9",
+	"conversations": "5",
+	"date": "12.01.2016",
+	"votes": "19",
+	"description": "All my patients with diabetes should see an ophtalmologist yearly for a dialated eye examination- beginning at diagnosis in people with type 2 diabetes, and after 5 years in people with type 1 diabetes after puberty. Patients with know eye disease, symptoms or blurred vision in one eye, or blind spots may need to see their ophtalmologist more frequently.",
+	"comments": [
+	{
+		"id": "c25",
+		"authorId": "2",
+		"when": "yesterday",
+		"commentText": "Numbers or tingling in your feet should be reported to your doctor at your regular visits. Numbers or tingling in your feet should be reported to your doctor at your regular visits. Numbers or tingling in your feet should be reported to your doctor at your regular visits.",
+		"votes": "8",
+		"answers": [
+		{
+			"id": "c26",
+			"authorId": "3",
+			"answerText": "You should check your feet daily for redness, caluses, cracks or skin breakdown.",
+			"when": "yesterday",
+			"votes": "2"
+		},
+		{
+			"id": "c27",
+			"authorId": "3",
+			"answerText": "Another answer for first comment",
+			"when": "now",
+			"votes": "165"
+		}
+
+		]
+	},
+	{
+		"id": "c28",
+		"authorId": "3",
+		"when": "two days",
+		"commentText": "When your blood sugar is low, your body gives out signs that you need food. Different people have different symptoms. You will learn to know that symptoms.",
+		"votes": "3"
+	},
+	{
+		"id": "c29",
+		"authorId": "3",
+		"when": "three days",
+		"commentText": "When your blood sugar is low, your body gives out signs that you need food. Different people have different symptoms. You will learn to know that symptoms.",
+		"votes": "5"
+	}
+	]
+},
+{
+	"id": "q6",
+	"title": "Vegan diet to stop diabetes progress?",
+	"authorId": "4",
+	"related": "5",
+	"peers": "4",
+	"conversations": "0",
+	"date": "11.01.2016",
+	"votes": "19",
+	"description": "All my patients with diabetes should see an ophtalmologist yearly for a dialated eye examination- beginning at diagnosis in people with type 2 diabetes, and after 5 years in people with type 1 diabetes after puberty. Patients with know eye disease, symptoms or blurred vision in one eye, or blind spots may need to see their ophtalmologist more frequently.",
+	"comments": [
+	{
+		"id": "c30",
+		"authorId": "2",
+		"when": "yesterday",
+		"commentText": "Numbers or tingling in your feet should be reported to your doctor at your regular visits. Numbers or tingling in your feet should be reported to your doctor at your regular visits. Numbers or tingling in your feet should be reported to your doctor at your regular visits.",
+		"votes": "8",
+		"answers": [
+		{
+			"id": "c31",
+			"authorId": "3",
+			"answerText": "You should check your feet daily for redness, caluses, cracks or skin breakdown.",
+			"when": "yesterday",
+			"votes": "2"
+		},
+		{
+			"id": "c32",
+			"authorId": "3",
+			"answerText": "Another answer for first comment",
+			"when": "now",
+			"votes": "165"
+		}
+
+		]
+	},
+	{
+		"id": "c33",
+		"authorId": "3",
+		"when": "two days",
+		"commentText": "When your blood sugar is low, your body gives out signs that you need food. Different people have different symptoms. You will learn to know that symptoms.",
+		"votes": "3"
+	},
+	{
+		"id": "c34",
+		"authorId": "3",
+		"when": "three days",
+		"commentText": "When your blood sugar is low, your body gives out signs that you need food. Different people have different symptoms. You will learn to know that symptoms.",
+		"votes": "5"
+	}
+	]
+}
+
+]

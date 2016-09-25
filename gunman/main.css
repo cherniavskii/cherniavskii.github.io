@@ -1,0 +1,412 @@
+@font-face {
+	font-family: Monotype;
+	src: url(Monotype.com.ttf);
+}
+.hidden {
+	display: none;
+}
+body {
+	background-color: #fff;
+}
+
+.game {
+	background-image: url(img/bg.png);
+	width: 1056px;
+	height: 536px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+
+	font-family: Monotype;
+	color: #fff;
+	font-size: 22px;
+	font-weight: bold;
+}
+.scores {
+	text-align: center;
+	margin-top: 10px;
+}
+.level {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+}
+
+.game-score {
+	font-family: Monotype;
+	color: #fff;
+	font-size: 22px;
+	font-weight: bold;
+	margin: 20px auto 0;
+	text-align: center;
+}
+
+.killed {
+	box-shadow: inset 0 0 200px red;
+}
+
+.game-status {
+	background-color: #fff;
+	width: 250px;
+	padding: 5px;
+	border-radius: 8px;
+	text-align: center;
+	color: #000;
+	margin: 420px auto 0;
+}
+
+.start {
+	background-color: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: 1s;
+}
+
+.start-game {
+	font-family: Monotype;
+	color: #fff;
+	font-size: 22px;
+	font-weight: bold;
+	background-color: transparent;
+	border: 1px solid #fff;
+	border-radius: 10px;
+	padding: 0 20px;
+	height: 50px;
+	cursor: pointer;
+	transition: 0.3s;
+	display: block;
+	margin: 243px auto 0;
+}
+.start-game:hover, .next-level:hover {
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
+.next-level {
+	font-family: Monotype;
+	color: #fff;
+	font-size: 22px;
+	font-weight: bold;
+	background-color: transparent;
+	border: 1px solid #fff;
+	border-radius: 10px;
+	padding: 0 20px;
+	height: 35px;
+	cursor: pointer;
+	transition: 0.3s;
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
+
+.gunman-score, .your-score {
+	display: inline-block;
+}
+.enemy {
+	position: absolute;
+	right: -128px;
+	bottom: 100px;
+	width: 128px;
+	height: 256px;
+	background-image: url(img/gunman.png);
+	cursor: crosshair;
+}
+
+.enemy_move {
+	transform: translate(-592px);
+	transition: transform 4s linear;
+}
+
+.enemy-1 {
+	background-position: 0 0;
+}
+
+@keyframes walk1 {
+	0% {
+		background-position: 0 0;
+	}
+	33% {
+		background-position: -136px 0;
+	}
+	66% {
+		background-position: -268px 0;
+	}
+}
+
+.enemy-1_walk {
+	animation: walk1 1s step-start;
+	animation-iteration-count: 4;
+}
+
+.enemy-1_stay {
+	background-position: -400px 0;
+}
+
+@keyframes fall1 {
+	33% {
+		background-position: -1352px 0;
+	}
+	66% {
+		background-position: -1488px 0;
+	}
+	100% {
+		background-position: -1614px 0;
+	}
+}
+
+.enemy-1_fall {
+	animation: fall1 1s step-start;
+	animation-fill-mode: forwards;
+}
+
+@keyframes hit1 {
+	0% {
+		background-position: -808px 0;
+	}
+	25% {
+		background-position: -944px 0;
+	}
+	50% {
+		background-position: -1080px 0;
+	}
+	100% {
+		background-position: -1216px 0;
+	}
+}
+
+.enemy-1_hit {
+	animation: hit1 0.5s step-start;
+	animation-fill-mode: forwards;
+}
+
+.enemy-2 {
+	background-position: 0 -272px;
+	height: 288px;
+}
+
+@keyframes walk2 {
+	0% {
+		background-position: 0 -272px;
+	}
+	33% {
+		background-position: -128px -272px;
+	}
+	66% {
+		background-position: -256px -272px;
+	}
+}
+
+.enemy-2_walk {
+	animation: walk2 1s step-start;
+	animation-iteration-count: 4;
+}
+
+.enemy-2_stay {
+	background-position: -384px -272px;
+}
+
+@keyframes fall2 {
+	100% {
+		background-position: -1024px -272px;
+	}
+}
+
+.enemy-2_fall {
+	animation: fall2 1s step-start;
+	animation-fill-mode: forwards;
+}
+
+@keyframes hit2 {
+	0% {
+		background-position: -512px -272px;
+	}
+	25% {
+		background-position: -640px -272px;
+	}
+	50% {
+		background-position: -768px -272px;
+	}
+	100% {
+		background-position: -896px -272px;
+	}
+}
+
+.enemy-2_hit {
+	animation: hit2 0.5s step-start;
+	animation-fill-mode: forwards;
+}
+
+.enemy-3 {
+	background-position: 0 -576px;
+	height: 320px;
+}
+
+@keyframes walk3 {
+	0% {
+		background-position: 0 -576px;
+	}
+	33% {
+		background-position: -128px -576px;
+	}
+	66% {
+		background-position: -256px -576px;
+	}
+}
+
+.enemy-3_walk {
+	animation: walk3 1s step-start;
+	animation-iteration-count: 4;
+}
+
+.enemy-3_stay {
+	background-position: -384px -576px;
+}
+
+@keyframes fall3 {
+	50% {
+		background-position: -896px -576px;
+	}
+
+	100% {
+		background-position: -1024px -576px;
+	}
+}
+
+.enemy-3_fall {
+	animation: fall3 1s step-start;
+	animation-fill-mode: forwards;
+}
+
+@keyframes hit3 {
+	0% {
+		background-position: -512px -576px;
+	}
+	33% {
+		background-position: -640px -576px;
+	}
+	66% {
+		background-position: -768px -576px;
+	}
+}
+
+.enemy-3_hit {
+	animation: hit3 0.5s step-start;
+	animation-fill-mode: forwards;
+}
+
+.enemy-4 {
+	background-position: 0 -912px;
+}
+
+@keyframes walk4 {
+	0% {
+		background-position: 0 -912px;
+	}
+	33% {
+		background-position: -128px -912px;
+	}
+	66% {
+		background-position: -256px -912px;
+	}
+}
+
+.enemy-4_walk {
+	animation: walk4 1s step-start;
+	animation-iteration-count: 4;
+}
+
+.enemy-4_stay {
+	background-position: -384px -912px;
+}
+
+@keyframes fall4 {
+	50% {
+		background-position: -896px -912px;
+	}
+
+	100% {
+		background-position: -1024px -912px;
+	}
+}
+
+.enemy-4_fall {
+	animation: fall4 1s step-start;
+	animation-fill-mode: forwards;
+}
+
+@keyframes hit4 {
+	0% {
+		background-position: -512px -912px;
+	}
+	33% {
+		background-position: -640px -912px;
+	}
+	66% {
+		background-position: -768px -912px;
+	}
+}
+
+.enemy-4_hit {
+	animation: hit4 0.5s step-start;
+	animation-fill-mode: forwards;
+}
+
+.enemy-5 {
+	background-position: 0 -1184px;
+	height: 276px;
+}
+
+@keyframes walk5 {
+	0% {
+		background-position: 0 -1184px;
+	}
+	33% {
+		background-position: -128px -1184px;
+	}
+	66% {
+		background-position: -256px -1184px;
+	}
+}
+
+.enemy-5_walk {
+	animation: walk5 1s step-start;
+	animation-iteration-count: 4;
+}
+
+.enemy-5_stay {
+	background-position: -384px -1184px;
+}
+
+@keyframes fall5 {
+	50% {
+		background-position: -896px -1184px;
+	}
+
+	100% {
+		background-position: -1024px -1184px;
+	}
+}
+
+.enemy-5_fall {
+	animation: fall5 0.5s step-start;
+	animation-fill-mode: forwards;
+}
+
+@keyframes hit5 {
+	0% {
+		background-position: -512px -1184px;
+	}
+	33% {
+		background-position: -640px -1184px;
+	}
+	66% {
+		background-position: -768px -1184px;
+	}
+}
+
+.enemy-5_hit {
+	animation: hit5 0.5s step-start;
+	animation-fill-mode: forwards;
+}

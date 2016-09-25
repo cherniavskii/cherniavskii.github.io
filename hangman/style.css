@@ -1,0 +1,483 @@
+@font-face {
+  font-family: AllerDisplay;
+  src: url("fonts/AllerDisplay.ttf");
+  font-style: normal;
+}
+/* Game colors */
+/* Hangman colours: */
+body {
+  font-family: AllerDisplay;
+  background-color: #3b4263;
+}
+
+.game {
+  width: 800px;
+  height: 480px;
+  border-radius: 5px;
+  margin: 40px auto;
+  box-shadow: 2px 3px 10px black;
+  position: relative;
+  overflow: hidden;
+  background-color: whitesmoke;
+}
+.game::before {
+  content: '';
+  width: 400px;
+  height: 200px;
+  background-color: #4c71fa;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  position: absolute;
+  bottom: -90px;
+  right: -130px;
+}
+
+.letters {
+  width: 726px;
+  height: 56px;
+  margin: 37px;
+  padding: 0;
+  background-color: transparent;
+  font-size: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.letter {
+  width: 56px;
+  height: 56px;
+  line-height: 56px;
+  border-radius: 5px;
+  margin: 0 5px;
+  display: inline-block;
+  vertical-align: top;
+  background-color: #e6e6e7;
+  color: white;
+  font-size: 34px;
+  text-transform: uppercase;
+  text-align: center;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.letter_active {
+  background-color: #53555d;
+}
+.letter_won {
+  background-color: #88c357;
+}
+
+.missed {
+  width: 330px;
+  min-height: 50px;
+  padding-top: 20px;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.missed__title {
+  color: #53555d;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.missed__letters {
+  padding: 0;
+  margin: 0;
+}
+
+.m__letter {
+  font-size: 36px;
+  text-transform: uppercase;
+  color: #4d71fa;
+  display: inline-block;
+  margin: 0 2px;
+}
+
+.game__over {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(58, 66, 99, 0.74);
+  opacity: 1;
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.over__title, .over__word {
+  color: white;
+}
+
+.over__title {
+  margin-top: 150px;
+  font-size: 36px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.over__word {
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.new-game {
+  font-family: AllerDisplay;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #ffb900;
+  background-color: transparent;
+  border: 3px dashed #ffb900;
+  border-radius: 25px;
+  outline: none;
+  padding: 15px 40px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.new-game:hover {
+  background-color: rgba(255, 185, 0, 0.2);
+}
+
+/* Hangman graphics */
+.hangman {
+  height: 300px;
+  width: 200px;
+  position: absolute;
+  top: 30px;
+  left: 5px;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+}
+
+/* Animation for hagman when player looses */
+@-webkit-keyframes hang {
+  0% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+  50% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  100% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+}
+@keyframes hang {
+  0% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+  50% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  100% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+}
+.hang {
+  -webkit-animation: hang 2s infinite ease-in-out;
+          animation: hang 2s infinite ease-in-out;
+}
+
+.frame1, .frame2, .frame3, .frame4, .frame5,
+.frame6, .frame7, .frame8, .frame9, .frame10,
+.frame11 {
+  opacity: 1;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.bar {
+  width: 125px;
+  height: 12px;
+  border-radius: 4px;
+  background-color: #53555d;
+  position: absolute;
+  top: 30px;
+  left: -5px;
+}
+.bar::before {
+  content: '';
+  width: 12px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #53555d;
+  position: absolute;
+  top: 8px;
+  left: 99px;
+}
+
+.head {
+  height: 94px;
+  width: 60px;
+  border-radius: 30px;
+  background-color: #ffcd89;
+  position: absolute;
+  z-index: 3;
+  top: 31px;
+  left: 65px;
+  overflow: hidden;
+}
+.head::before, .head::after {
+  content: '';
+  width: 30px;
+  height: 40px;
+  border-radius: 15px;
+  background-color: #ecc48e;
+  position: absolute;
+  top: 0;
+}
+.head::before {
+  left: -20px;
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+}
+.head::after {
+  right: -20px;
+  -webkit-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+}
+
+.head__eye {
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  background-color: #3e3e3f;
+  position: absolute;
+  top: 35px;
+}
+.head__eye_right {
+  left: 16px;
+}
+.head__eye_left {
+  right: 16px;
+}
+
+.ear {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #ffcd89;
+  position: absolute;
+  z-index: 2;
+  top: 68px;
+}
+.ear__right {
+  left: 53px;
+}
+.ear__left {
+  left: 116px;
+}
+.ear__left::after {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #a0a0a0;
+  position: absolute;
+  left: 11px;
+  bottom: -1px;
+}
+
+.ear__part {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ffbd72;
+  position: absolute;
+  top: 5px;
+}
+.ear__part_right {
+  left: 6px;
+}
+.ear__part_left {
+  left: 5px;
+}
+
+.head__beard {
+  width: 100%;
+  height: 40px;
+  background-color: #ecc48e;
+  position: absolute;
+  top: 56px;
+}
+
+.head__nose {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ffcd89;
+  position: absolute;
+  top: 52px;
+  left: 24px;
+}
+.head__nose::before, .head__nose::after {
+  content: '';
+  width: 23px;
+  height: 7px;
+  border-radius: 5px;
+  background-color: #ffcd89;
+  position: absolute;
+  top: -1px;
+}
+.head__nose::before {
+  left: 8px;
+  -webkit-transform: rotate(12deg);
+          transform: rotate(12deg);
+}
+.head__nose::after {
+  left: -20px;
+  -webkit-transform: rotate(-12deg);
+          transform: rotate(-12deg);
+}
+
+.head__mouth {
+  width: 14px;
+  height: 8px;
+  border-radius: 10px 10px 0 0;
+  background-color: white;
+  position: absolute;
+  top: 63px;
+  left: 22px;
+}
+.head__mouth::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #a0a0a0;
+  position: absolute;
+  left: -5px;
+  bottom: 1px;
+}
+
+.neck {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background-color: #ffcd89;
+  position: absolute;
+  top: 120px;
+  left: 85px;
+}
+
+.shirt {
+  width: 50px;
+  height: 80px;
+  border-radius: 5px;
+  background-color: #3b5c92;
+  position: absolute;
+  top: 133px;
+  left: 70px;
+  overflow: hidden;
+}
+.shirt::before, .shirt::after {
+  content: '';
+  width: 25px;
+  height: 60px;
+  position: absolute;
+  top: 0;
+}
+.shirt::before {
+  right: 0;
+  background-color: #4a9d6a;
+}
+.shirt::after {
+  left: 0;
+  background-color: #88c357;
+}
+
+.arm {
+  width: 20px;
+  height: 70px;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 2;
+  top: 130px;
+}
+.arm__left {
+  left: 122px;
+  background-color: #4a9d6a;
+  -webkit-transform: rotate(-40deg);
+          transform: rotate(-40deg);
+}
+.arm__right {
+  left: 48px;
+  background-color: #88c357;
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
+
+.hand {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #ffcd89;
+  position: absolute;
+  z-index: 1;
+  top: 184px;
+}
+.hand__left {
+  left: 147px;
+}
+.hand__right {
+  left: 28px;
+}
+
+.leg {
+  width: 20px;
+  height: 90px;
+  border-radius: 5px;
+  background-color: #3b5c92;
+  position: absolute;
+  z-index: 2;
+  top: 200px;
+}
+.leg__left {
+  left: 106px;
+  -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+}
+.leg__right {
+  left: 64px;
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+}
+
+.foot {
+  height: 15px;
+  width: 40px;
+  border-radius: 5px;
+  background-color: #ffcd89;
+  position: absolute;
+  z-index: 1;
+  top: 280px;
+}
+.foot__left {
+  left: 113px;
+  -webkit-transform: rotate(-8deg);
+          transform: rotate(-8deg);
+}
+.foot__right {
+  left: 37px;
+  -webkit-transform: rotate(8deg);
+          transform: rotate(8deg);
+}
+
+.hidden {
+  opacity: 0;
+  z-index: -2;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}

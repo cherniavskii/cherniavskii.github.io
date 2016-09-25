@@ -1,0 +1,100 @@
+<div class="question__body">
+	<header class="question__header">
+		<div class="outer-container">
+			<a href="#/" class="back-lnk"><i class="back-btn icon-left-open-big"></i></a>
+			<div class="content-container">
+				<h1 class="header__title">Question</h1>
+				<button class="add-btn icon-plus"></button>
+				<div class="header__last-time">
+					Last time discussed <span class="last-time__days">1</span> day ago
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="content">
+		<div class="outer-container">
+			<div class="content-container">
+				<div class="content__squestion" ng-controller="ModalController">
+					<img src="img/300.png" alt="photo" ng-click="openModal()" class="squestion__photo">
+					<div class="squestion__author">
+						<span class="author__name" ng-click="openModal()">Eva</span>
+						is asking:
+					</div><br>
+					<div class="squestion__title">
+						{{question.title}}
+					</div>
+					<button class="squestion__unfollow">unfollow</button>
+					<div class="squestion__details">
+						<div class="squestion__description">
+							{{question.description}}
+						</div>
+						<div class="squestion__upvotes">
+							<div class="upvotes__descr">
+								<span class="upvotes__qty">{{Math.abs(question.votes)}}</span> <span ng-show="question.votes >= 0">upvotes</span> <span ng-show="question.votes < 0">downvotes</span>
+							</div>
+							<div class="squestion__vote">
+								<button class="vote__up" ng-click="voteUp(question)">&#9650;</button>
+								<button class="vote__down" ng-click="voteDown(question)">&#9660;</button>
+							</div>
+						</div>
+					</div>
+					<button class="squestion__give-answer">GIVE new answer</button>
+				</div>
+			</div>
+			<div class="already-answered"><span class="answered__qty">{{question.comments.length}}</span> peers already answered Eva</div>
+
+			<div class="content-container">
+				<div class="content__comments" ng-controller="ModalController">
+					
+					<div class="comment__block" ng-repeat="comment in question.comments">
+						<div class="content__comment">
+							<div class="comment__photo-container">
+								<img src="img/300.png" alt="photo" ng-click="openModal()" class="comment__photo">
+							</div>
+							<div class="comment__head">
+								<span class="comment__author" ng-click="openModal()">Patricia</span> commented it  &#8226; <span class="comment__when">{{comment.when}}</span>
+							</div>
+							<div class="squestion__upvotes">
+								<div class="upvotes__descr">
+									<span class="upvotes__qty">{{Math.abs(comment.votes)}}</span> <span ng-show="comment.votes >= 0">upvotes</span> <span ng-show="comment.votes < 0">downvotes</span>
+								</div>
+								<div class="squestion__vote">
+									<button class="vote__up" ng-click="voteUp(comment)">&#9650;</button>
+									<button class="vote__down" ng-click="voteDown(comment)">&#9660;</button>
+								</div>
+							</div>
+							<div class="comment__text">
+								{{comment.commentText}}
+							</div>
+							<button class="comment__add-comment" ng-show="$last">COMMENT</button>
+						</div>
+
+						<div class="content__comment-answer" ng-show="comment.answers.length" ng-repeat="answer in comment.answers">
+							<div class="comment__photo-container">
+								<img src="img/300.png" alt="photo" ng-click="openModal()" class="comment__photo">
+							</div>
+							<div class="comment__head">
+								<span class="comment__author" ng-click="openModal()">David</span> commented it  &#8226; <span class="comment__when">{{answer.when}}</span>
+							</div>
+							<div class="squestion__upvotes">
+								<div class="upvotes__descr">
+									<span class="upvotes__qty">{{Math.abs(answer.votes)}}</span> <span ng-show="answer.votes >= 0">upvotes</span> <span ng-show="answer.votes < 0">downvotes</span>
+								</div>
+								<div class="squestion__vote">
+									<button class="vote__up" ng-click="voteUp(answer)">&#9650;</button>
+									<button class="vote__down" ng-click="voteDown(answer)">&#9660;</button>
+								</div>
+							</div>
+							<div class="comment__text">
+								{{answer.answerText}}
+							</div>
+							<button class="comment__add-comment" ng-show="$last">CONTINUE duscussion</button>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

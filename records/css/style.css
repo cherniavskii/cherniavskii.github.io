@@ -1,0 +1,17 @@
+form {
+	max-width: 300px;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+.table {
+	max-width: 1000px;
+	text-align: center;
+	margin: 30px auto;
+	position: relative;
+}
+
+th {
+	text-align: center;
+	cursor: pointer;
+}

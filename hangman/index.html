@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hangman</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class='game'>
+    <div class='missed'>
+      <div class='missed__title hidden'>you missed:</div>
+      <ul class='missed__letters'></ul>
+    </div>
+    <ul class='letters'>
+      <li class='letter'></li>
+      <li class='letter'></li>
+      <li class='letter'></li>
+      <li class='letter'></li>
+      <li class='letter'></li>
+      <li class='letter'></li>
+      <li class='letter'></li>
+      <li class='letter'></li>
+      <li class='letter'></li>
+      <li class='letter'></li>
+      <li class='letter'></li>
+    </ul>
+    <div class='game__over hidden'>
+      <h1 class='over__title'>Game Over</h1>
+      <h2 class='over__word'></h2>
+      <button class='new-game'>New Word</button>
+    </div>
+    <div class='bar'></div>
+    <div class='hangman'>
+      <div class='frame1 hidden'>
+        <div class='head'>
+          <div class='head__eye head__eye_right'></div>
+          <div class='head__eye head__eye_left'></div>
+          <div class='head__beard'></div>
+          <div class='head__nose'></div>
+          <div class='head__mouth'></div>
+        </div>
+        <div class='ear ear__right'>
+          <div class='ear__part ear__part_right'></div>
+        </div>
+        <div class='ear ear__left'>
+          <div class='ear__part ear__part_left'></div>
+        </div>
+      </div>
+      <div class='frame2 neck hidden'></div>
+      <div class='frame3 shirt hidden'></div>
+      <div class='frame4 arm arm__left hidden'></div>
+      <div class='frame5 arm arm__right hidden'></div>
+      <div class='frame6 hand hand__left hidden'></div>
+      <div class='frame7 hand hand__right hidden'></div>
+      <div class='frame8 leg leg__left hidden'></div>
+      <div class='frame9 leg leg__right hidden'></div>
+      <div class='frame10 foot foot__left hidden'></div>
+      <div class='frame11 foot foot__right hidden'></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

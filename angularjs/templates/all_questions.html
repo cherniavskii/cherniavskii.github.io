@@ -1,0 +1,75 @@
+<div class="questions__body">
+	<header class="questions__header">
+		<div class="outer-container">
+			<a href="#/" class="back-lnk"><i class="back-btn icon-left-open-big"></i></a>
+			<div class="content-container">
+				<h1 class="header__title">Questions</h1>
+				<button class="add-btn icon-plus"></button>
+				<div class="header__controls">
+					<div class="header__filter">
+						<label class="filter__option"><input type="radio" name="filter" checked> My shelf</label>
+						<label class="filter__option"><input type="radio" name="filter"> All questions</label>
+					</div>
+					<div class="header__sort">
+						Sort by: <span class="sort__option sort__option_active" ng-click="filterQuery = 'date'; setActive($event)">recent</span>
+						or
+						<span class="sort__option" ng-click="filterQuery = 'peers'; setActive($event)">hot</span>
+					</div> 
+				</div>
+				<form class="header__search">
+					<input type="text" class="search__input" placeholder="Search questions" ng-model="searchInput">
+					<input type="submit" class="search__submit" value="SEARCH" ng-click="search(searchInput)">
+				</form>
+			</div>
+		</div>
+	</header>
+	<div class="content">
+		<div class="outer-container">
+			<div class="content-container" ng-controller="ModalController">
+
+				<div class="content__question" ng-repeat="question in visibleQuestions = (questions | orderBy:filterQuery:reverse | limitTo:questionsLimit ) | filter:{title: searchQuery}">
+					<img src="img/300.png" alt="photo" ng-click="openModal()" class="question__photo">
+					<div class="question__author" ng-init="getUser(question.authorId)">
+						<span ng-click="openModal()" class="author__name">Eva</span>
+						is asking:
+					</div><br>
+					<a href="#/questions/{{question.id}}" class="question__title">
+						{{question.title}}
+					</a>
+					<div class="question__involved">
+						<a class="involved__block involved__block_more" href="#/questions/{{question.id}}">
+							<div class="involved__more-quantity">3</div>
+						</a>
+						<a class="involved__block involved__block_commented" href="#/questions/{{question.id}}">
+							<img src="img/300.png" alt="photo" class="involved__photo">
+						</a>
+						<a class="involved__block involved__block_commented" href="#/questions/{{question.id}}">
+							<img src="img/300.png" alt="photo" class="involved__photo">
+						</a>
+						<a class="involved__block involved__block_commented" href="#/questions/{{question.id}}">
+							<img src="img/300.png" alt="photo" class="involved__photo">
+						</a>
+						<a class="involved__block involved__block_answered" href="#/questions/{{question.id}}">
+							<img src="img/300.png" alt="photo" class="involved__photo">
+						</a>
+					</div>
+					<div class="question__stats">
+						<div class="stats__item">
+							<span class="stats__related">{{question.related}}</span>related discussion
+						</div>
+						<div class="stats__item">
+							<span class="stats__peers">{{question.peers}}</span>peers involved
+						</div>
+						<div class="stats__item">
+							<span class="stats__conversations">{{question.conversations}}</span>conversations
+						</div>
+					</div>
+				</div>
+
+				<div class="content__load-more" ng-hide="visibleQuestions.length === questions.length">
+					<div class="load-more" ng-click="loadMore()">load more questions</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

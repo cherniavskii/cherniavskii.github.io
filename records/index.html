@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="recordsApp">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Document</title>
+</head>
+<body ng-controller="recordsController">
+	<form ng-submit="addRecord()">
+		<div class="form-group">
+			<label for="name">Name</label>
+			<input type="text" class="form-control" id="name" placeholder="Name" ng-model="newName">
+		</div>
+		<div class="form-group">
+			<label for="surname">Surname</label>
+			<input type="text" class="form-control" id="surname" placeholder="Surname" ng-model="newSurname">
+		</div>
+		<div class="form-group">
+			<label for="age">Age</label>
+			<input type="text" class="form-control" id="age" placeholder="Age" ng-model="newAge">
+		</div>
+		<button type="submit" class="btn btn-primary">Add record</button>
+	</form>
+
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th ng-click="sort('name')">Name</th>
+				<th ng-click="sort('surname')">Surname</th>
+				<th ng-click="sort('age')">Age</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="record in records | orderBy:sortQuery:reverse track by $index">
+				<td>{{record.name}}</td>
+				<td>{{record.surname}}</td>
+				<td>{{record.age}}</td>
+				<td>
+					<button class="btn btn-danger btn-xs" ng-click="removeRecord(record)">remove</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<script src="js/angular.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
