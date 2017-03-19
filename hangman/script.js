@@ -12,7 +12,7 @@
   var word, words, wordIndex, splittedWord, guessedLetters = [], missedLetters = [];
 
   /*Wordnik API URL for getting 100 words (nouns only) with min length 3 and max length 11*/
-  var apiUrl = 'https://api.wordnik.com:80/v4/words.json/randomWords?hasDictionaryDef=true&includePartOfSpeech=noun&minCorpusCount=0&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=3&maxLength=11&limit=100&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
+  var apiUrl = 'https://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=true&includePartOfSpeech=noun&minCorpusCount=0&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=3&maxLength=11&limit=100&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
 
   /* Creatinge lement for missing letter */
   var mLetter = document.createElement('li');
