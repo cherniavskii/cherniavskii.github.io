@@ -8,16 +8,16 @@
   var newGame = document.querySelector('.new-game');
   var missedTitle = document.querySelector('.missed__title');
   var hangman = document.querySelector('.hangman');
-  
-  var word, words, wordIndex, splittedWord, guessedLetters = [], missedLetters = [];
-  
-  /*Wordnik API URL for getting 100 words (nouns only) with min length 3 and max length 11*/
-  var apiUrl = 'http://api.wordnik.com:80/v4/words.json/randomWords?hasDictionaryDef=true&includePartOfSpeech=noun&minCorpusCount=0&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=3&maxLength=11&limit=100&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
 
-  /* Creatinge lement for missing letter */ 
+  var word, words, wordIndex, splittedWord, guessedLetters = [], missedLetters = [];
+
+  /*Wordnik API URL for getting 100 words (nouns only) with min length 3 and max length 11*/
+  var apiUrl = 'https://api.wordnik.com:80/v4/words.json/randomWords?hasDictionaryDef=true&includePartOfSpeech=noun&minCorpusCount=0&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=3&maxLength=11&limit=100&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5';
+
+  /* Creatinge lement for missing letter */
   var mLetter = document.createElement('li');
   mLetter.className = 'm__letter';
-  
+
   loadWords();
 
 
@@ -46,7 +46,7 @@
 
     wordIndex++;
 
-    /* Check if there are unused words in array. If no - function 'loadWords' will load new array */ 
+    /* Check if there are unused words in array. If no - function 'loadWords' will load new array */
     if (wordIndex > words.length - 1) {
       loadWords();
       return;
@@ -55,7 +55,7 @@
     /* Picking one word from array */
     word = words[wordIndex].word;
     splittedWord = word.toLowerCase().split('');
-    
+
     /* If there are unnecessary symbols in this word - takes next one */
     if (splittedWord.indexOf('-') != -1 || splittedWord.indexOf("\'") != -1) {
       nextWord();
@@ -78,7 +78,7 @@
 
     guessedLetters = [];
     missedLetters = [];
-    
+
     missedTitle.classList.add('hidden');
     hangman.classList.remove('hang');
 
@@ -91,11 +91,11 @@
     for (i = mLetters.children.length - 1; i >= 0; i--) {
       mLetters.removeChild(mLetters.children[i]);
     }
-    
+
     for (i = 1; i < 12; i++) {
       document.querySelector('.frame' + i).classList.add('hidden');
     }
-  } 
+  }
 
   /* Once letter key pressed on keyboard - check if there is such letter in the word */
   function tryLetter(e) {
@@ -107,13 +107,13 @@
     /* If this is not a Latin letter - return and wait for another letter */
     if (e.charCode < 97 || e.charCode > 122) return;
 
-    if (splittedWord.indexOf(inputLetter) != -1) { 
+    if (splittedWord.indexOf(inputLetter) != -1) {
       showGuessed(inputLetter);
     } else {
       showMissed(inputLetter);
     }
   }
-  
+
   /* If word contains chosen letter */
   function showGuessed(inputLetter) {
     var index = -1;
@@ -125,28 +125,28 @@
       guessedLetters.push(inputLetter);
     }
 
-    /* If all letters in the word are quessed - go to next word */ 
+    /* If all letters in the word are quessed - go to next word */
     if (guessedLetters.length == splittedWord.length) {
       document.removeEventListener('keypress', tryLetter);
-      
+
       for (var i = 11 - word.length; i < 11; i++) {
         letters.children[i].classList.add('letter_won');
       }
-      
-      setTimeout(nextWord, 1000); 
+
+      setTimeout(nextWord, 1000);
     }
   }
 
   /* If word does't contain chosen letter */
   function showMissed(inputLetter) {
     missedTitle.classList.remove('hidden');
-    
+
     missedLetters.push(inputLetter);
 
     /* Show this letter in list of missed */
     mLetter.textContent = inputLetter;
     mLetters.appendChild(mLetter.cloneNode(true));
-    
+
     /* If game is not over show the next frame of hangman */
     if (missedLetters.length <= 11) {
       document.querySelector('.frame' + missedLetters.length).classList.remove('hidden');
@@ -182,5 +182,5 @@
 
     return null;
   }
- 
+
 })();
